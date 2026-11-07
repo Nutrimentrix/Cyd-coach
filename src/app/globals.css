@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+@theme {
+  --color-groen: #4fae35;
+  --color-groen-donker: #2f7a1d;
+  --color-groen-zacht: #eef4ea;
+  --color-inkt: #1c2b18;
+  --color-grond: #f4f7f1;
+  --color-lijn: #dde7d6;
+  --color-mat: #56664f;
+  --color-oranje: #a3520a;
+  --color-oranje-zacht: #fdf1e3;
+  --color-rood: #9a2b1e;
+  --font-sans: var(--font-source-sans), system-ui, sans-serif;
+  --font-kop: var(--font-oswald), sans-serif;
+}
+
+body {
+  background: var(--color-grond);
+  color: var(--color-inkt);
+}
+
+@layer components {
+  .kaart {
+    @apply rounded-2xl border border-lijn bg-white;
+  }
+  .label {
+    @apply text-xs font-bold uppercase tracking-wider text-mat;
+  }
+  .kop {
+    @apply font-kop font-semibold uppercase tracking-tight;
+  }
+  .veld {
+    @apply min-h-10 w-full rounded-lg border border-lijn bg-white px-3 text-[15px] outline-none focus:border-groen focus:ring-2 focus:ring-groen/25;
+  }
+  .knop {
+    @apply inline-flex min-h-10 items-center justify-center gap-2 rounded-lg border border-lijn bg-white px-4 text-sm font-semibold text-inkt hover:border-groen;
+  }
+  .knop-primair {
+    @apply inline-flex min-h-10 items-center justify-center gap-2 rounded-lg bg-groen-donker px-4 text-sm font-semibold text-white hover:bg-[#25651a];
+  }
+}
